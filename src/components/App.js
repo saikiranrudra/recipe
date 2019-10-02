@@ -2,7 +2,8 @@ import React from 'react';
 import Searchbar from './Searchbar';
 import instance from './instance';
 import Card from './Card';
-
+import Loader from 'react-loader-spinner';
+import Error from './Error';
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -21,20 +22,26 @@ class App extends React.Component {
         
     }
     render() {
+        let keyValue = 0;
         const cards = this.state.recipes.map(recipe => {
-            return <Card data={recipe} />
+            return <Card data={recipe} key={keyValue} />
+            keyValue++;
         });
-        return (
-            <div className="app">
-                <Searchbar 
-                    placeholder={'Search recipe ...'}
-                    onSubmit={this.onFormSubmit}
-                />
-                <div className="resultGrid">
-                    {this.state.recipes.length == 0 ? "Loading...": cards}
+        if (window.screen.width >= 966) {
+            return (
+                <div className="app">
+                    <Searchbar 
+                        placeholder={'Search recipe ...'}
+                        onSubmit={this.onFormSubmit}
+                    />
+                    <div className="resultGrid">
+                        {this.state.recipes.length == 0 ? <Loader type="Circles" color="#eee" height={80} width={80}/>: cards}
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            return <Error message="App is not compatible with screen size smaller then 996px !"/>
+        }
     }
 }
 

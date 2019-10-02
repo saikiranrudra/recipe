@@ -40,7 +40,7 @@ body {
   position: relative;
   transform: translateX(-50%);
   left: 50%;
-  width: 40rem; }
+  width: 52rem; }
   .searchbar__input {
     font-size: 2rem;
     padding: .8rem 1.5rem;
@@ -399,3 +399,15 @@ body {
   grid-auto-rows: minmax(51rem, 1fr);
   align-items: center;
   justify-items: center; }
+
+.error_block {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #f62626;
+  background-color: #fbd6d6;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  top: 50%;
+  transform: translateY(50%); }

@@ -1,0 +1,12 @@
+.error_block {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgb(246, 38, 38);
+    background-color: rgb(251, 214, 214);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    top: 50%;
+    transform: translateY(50%);
+}

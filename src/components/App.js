@@ -22,11 +22,9 @@ class App extends React.Component {
         
     }
     render() {
-        let keyValue = 0;
-        const cards = this.state.recipes.map(recipe => {
-            return <Card data={recipe} key={keyValue} />
-            keyValue++;
-        });
+        
+        const cards = this.state.recipes.map((recipe, index) => <Card data={recipe} key={index} /> );
+
         if (window.screen.width >= 966) {
             return (
                 <div className="app">
@@ -35,7 +33,7 @@ class App extends React.Component {
                         onSubmit={this.onFormSubmit}
                     />
                     <div className="resultGrid">
-                        {this.state.recipes.length == 0 ? <Loader type="Circles" color="#eee" height={80} width={80}/>: cards}
+                        {this.state.recipes.length === 0 ? <Loader type="Circles" color="#eee" height={80} width={80}/>: cards}
                     </div>
                 </div>
             );

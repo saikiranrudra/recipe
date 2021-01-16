@@ -23,3 +23,10 @@ npm start
 ```
 http://localhost:3000
 ```
+## Preview
+1. Search UI
+![App Preview](./readmeAssets/ss_1.png "Home Page")
+
+2. Item UI
+![Item UI](./readmeAssets/ss_2.png "Item Ui")
+

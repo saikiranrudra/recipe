@@ -65,8 +65,7 @@ class Card extends React.Component {
                       <ul>
                         <li>
                           <a
-                            href="#"
-                            className=""
+                            role="button"
                             ref={el => (this.ingredient = el)}
                             onClick={this.ingridentShow}
                           >
@@ -75,7 +74,7 @@ class Card extends React.Component {
                         </li>
                         <li>
                           <a
-                            href="#"
+                            role="button"
                             className="cont_tabs--active"
                             ref={el => (this.nutrition = el)}
                             onClick={this.nutritionShow}
@@ -86,11 +85,14 @@ class Card extends React.Component {
                       </ul>
                     </div>
     
-                 <div className="cont_text_det_preparation" />
+                 <div className="cont_text_det_preparation">
+
                   <CardData 
                     isIngrident={this.state.ingredient}
                     data={this.props.data} 
-                />
+                  />
+                  
+                 </div>
                   </div>
                   <div className="cont_btn_open_dets">
                     <a onClick={this.toggleCard}>
